@@ -42,7 +42,17 @@ class RestaurantTest {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void ordertotal_method_should_return_the_total_order_value(){
 
+        adding_default_menu_option();
+        restaurant.addToMenu("Manchow soup",150);
+        restaurant.addToMenu("Cheese lasagne", 350);
+        String items[]={"Manchow soup","Cheese lasagne"};
+
+        assertEquals(500.0,restaurant.orderTotal(items));
+
+    }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
